@@ -48,6 +48,7 @@
 
     <modules>
         <module>core</module>
+        <module>hook</module>
     </modules>
 
     <properties>
@@ -129,6 +130,24 @@
                 <groupId>com.squareup.dagger</groupId>
                 <artifactId>dagger-compiler</artifactId>
                 <version>1.2.2</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>1.11.2</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>1.11.2</version>
+                <!--
+                the processor artifact is required only during compilation and
+                does not need to be transitive, hence provided scope
+                -->
                 <scope>test</scope>
             </dependency>
 
